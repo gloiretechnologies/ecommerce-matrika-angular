@@ -1,0 +1,162 @@
+<section class="sticky">
+    <div class='matrika-navbar'>
+      <div class='container'>
+          <div class='top-nav1 p-2'>
+              <div class='row'>
+                  <div class='col-md-3 topFirstBlock'>
+                      <div routerLink="/Ecommerce/myorders">
+                          <img class='img-truck' src='../../../assets/icons/truckfast.png' alt="React Logo" />
+                          <span class='order-tracking'>My Orders</span>
+                      </div>
+                  </div>
+                  <div class='col-md-6'>
+  
+                  </div>
+                  <div class='col-md-3'>
+                      <div class='topNavList'>
+                          <ul>
+                              <li class="text-light" routerLink="/contact" routerLinkActive="active">Contact</li>
+                              <li class="p-0">Blog</li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>  
+          </div>
+          <div class='top-nav2'>
+              <div class='row d-flex align-items-center'>
+                  <div class='col-md-3 logo-block-main'>
+                      <div class='logo-block d-flex'>
+                          <div (click)="reLoadDOM()">
+                              <img class='goldsikkaLogo' src='../../../assets/Goldsikka/Matrika Logo.png' />
+                              
+                          </div>
+                          <span class="line"></span>
+                          <div (click)="reLoadDOM()">
+                              <img class='MatrikaLogo' src='../../../assets/banners/LOGO PNG.png' />
+                          </div>
+                      </div>
+                  </div>
+                  <div class='col-md-6 text-start'>
+                      <div class='py-4 search'>
+                          <!-- <input class='p-2 searchInput' placeholder="What are you Looking for today? Ex: 'chains'" /> -->
+                          <!-- <select class='p-2 searchInput' (change)="changeFn(selection)" type="text" [(ngModel)]="selection">
+                            <option value="" default selected >What are you Looking for today? Ex: 'chains'</option>
+                            <option *ngFor="let data of prodname " value="data">{{data}}</option>
+                        </select> -->
+                        <select class='p-2 searchInput' (change)="navigateTo($event)">
+                            <option value="" default selected >What are you Looking for today? Ex: 'chains'</option>
+                            <option value="/Ecommerce/rings/1">Rings</option>
+                            <option value="/Ecommerce/chains/20">Chains</option>
+                            <option value="/Ecommerce/earrings/2">Earrings</option>
+                            <option value="/Ecommerce/necklace/33"> </option>
+                            <option value="/Ecommerce/bangelesBracelets/19">Bangeles & Bracelets</option>
+                            <option value="/Ecommerce/bullion/21">Bullion</option>silver
+                            <option value="/Ecommerce/silver">Silver</option>
+                            
+                        </select>
+                          <img class='microphone' src='../../../assets/icons/microphone.png' />
+                          <img class='searchIcon' src='../../../assets/icons/search.png' />
+  
+                      </div>
+                  </div>
+                  <div class='col-md-3 py-4'>
+                      <div class='row d-flex align-items-center cart-row'>
+                          <div class='col-md-3'>
+  
+                          </div>
+                          <div class='col-md-3 text-end'>
+                            <div class="dropdown" *ngIf="hideShowProfile">
+                              <!-- <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown link
+                              </a> -->
+                              <a  href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><img class='user' src='../../../assets/icons/user.png'></a>
+                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                              
+                                  <div class="row">
+                                      <div class="col-12">
+                                          <div class=" p-4 profile-dropdown-card">
+                                              <div class="d-flex flex-row">
+                                                  <div class="profile-dropdown-card-icon-bg">
+                                                      <h1 class="profile-dropdown-card-icon">S</h1>
+                                                  </div>
+                                                  <div class="profile-dropdown-card-head-email">
+                                                      <h1 class="profile-dropdown-card-main-head-text">Hi! {{profileName.name}}</h1>
+                                                      <span class="profile-dropdown-card-main-email-text">{{profileName.email}}</span>
+                                                  </div>
+                                              </div>
+                          
+                                              <div class="profile-dropdown-card-icons-with-text-container">
+                                                  <div class="d-flex flex-row align-items-center py-3"  routerLink="/Ecommerce/myorders">
+                                                      <i class="fa-solid fa-rectangle-list profile-dropdown-card-icons"></i>
+                                                      <span class="profile-dropdown-card-icons-text">My Orders</span>
+                                                  </div>
+                                                  <div class="d-flex flex-row py-3" routerLink="/viewprofile" routerLinkActive="active">
+                                                      <i class="fa-solid fa-user-pen profile-dropdown-card-icons"></i>
+                                                      <span class="profile-dropdown-card-icons-text" >My Account</span>
+                                                  </div>
+                                                  <div class="d-flex flex-row py-3" (click)="logout()">
+                                                      <i class="fa-solid fa-arrow-right-from-bracket profile-dropdown-card-icons"></i>
+                                                      <span class="profile-dropdown-card-icons-text">Logout</span>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </ul>
+                            </div>
+                        </div>
+                          <div class='col-md-3 text-end' style="position: relative;">
+                              <img (click)="func1()" class='heart' src='../../../assets/icons/heart.png' />
+                              <span class="count">
+                                <span *ngIf="response_wish==null" class="zero">0</span>{{len}}
+                              </span>
+                          </div>
+                          <div class='col-md-3 text-end ' style="position: relative;">
+                              <img (click)="func()" class='bag' src='../../../assets/icons/bag2.png' />
+                              <span class="count">
+                                <span *ngIf="cartlenghts=='No products in cart'" class="zero">0</span>
+                                <span *ngIf="cartlenghts!='No products in cart'">{{cartlenghts.length}}</span>
+                              </span>
+                          </div>
+                      </div>
+                  </div>
+  
+              </div>
+          </div>
+  
+      </div>
+  </div>
+  <div class="bg-light">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-link" routerLink="/Ecommerce/rings/1" routerLinkActive="active">Rings</a>
+                <a class="nav-link" routerLink="/Ecommerce/chains/20" routerLinkActive="active">Chains</a>
+                <a class="nav-link" routerLink="/Ecommerce/earrings/2" routerLinkActive="active">Earrings</a>
+                <a class="nav-link" routerLink="/Ecommerce/necklace/33" routerLinkActive="active">Necklace</a>
+                <a class="nav-link" routerLink="/Ecommerce/bangelesBracelets/19" routerLinkActive="active">Bangles & Bracelets</a>
+                  <!-- <a class="nav-link" routerLink="Ecommerce/type/gold">Gold</a> -->
+                  <a class="nav-link" routerLink="/Ecommerce/silver" routerLinkActive="active">Silver</a>
+                  <a class="nav-link" routerLink="/Ecommerce/bullion/21" routerLinkActive="active">Bullion</a>
+                  <a class="nav-link" routerLink="/Ecommerce/type/Giftcards" routerLinkActive="active">Gift Cards</a>
+                  <a class="nav-link " routerLink="/Ecommerce/trending" routerLinkActive="active">Trending</a>
+                  <a class="nav-link " routerLink="/Ecommerce/wedding" routerLinkActive="active">Wedding</a>
+                  <a class="nav-link " routerLink="/Ecommerce/gifts" routerLinkActive="active">Gifts</a>
+                  <a class="nav-link " routerLink="/Ecommerce/offers" routerLinkActive="active"><span class="wrapper"><span class="offers">Offers</span></span></a>
+              </div>
+          </div>
+      </div>
+    </nav>
+  </div>
+  </section>
+  <section>
+    
+    
+  </section>
+  
+  

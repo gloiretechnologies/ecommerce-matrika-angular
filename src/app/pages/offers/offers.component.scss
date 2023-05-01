@@ -1,0 +1,261 @@
+.container{
+    width: 1440px !important;
+  }
+  .container-custom{
+      width: 1640px !important;
+  }
+  
+  
+  
+  ///MATRIKA
+  body{
+    background: #F4F4F6;
+  }
+  
+  // @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+  // @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@500&display=swap');
+  
+  @import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap');
+  
+  
+  .card{
+      width: 312px;
+      height: 410px;
+      background-color: #F4F4F6;
+      border: none;
+      border-radius: 2% !important; 
+      border: 0.1px  solid #D9D9D9;
+  }
+  .gold-ring img{
+      width: 200px;
+      height: 150px;
+  }
+  .gold-ring{
+      margin: auto;
+     padding-bottom: 24px;
+  }
+  .card-container{
+      margin-left: 16px; 
+  }
+  .diamond {
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      color: #4E4B66;
+      letter-spacing: 1.15%;
+     
+  
+  }
+  
+  .icon-heart{
+      width: 20px;
+      height: 20px;
+    
+  }
+  .price{
+      padding-right: 8px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 21px; 
+      color:  #FF7215;
+      letter-spacing:2%;
+      
+  }
+  .strike-block{
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 14.06px;
+      color:  #6E7191;
+      text-decoration: line-through;
+  }
+  .price-block{
+      padding-bottom: 4px;
+  }
+  .zero-block{
+      padding-bottom: 7.5px;
+  }
+  .zero{
+      color: #FF7215;
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14.4px;
+      letter-spacing: 1.15%;
+  
+  
+  }
+  .icons ul {
+      display: inline;
+  }
+  .icons ul li{
+      list-style: none;
+      display: inline;
+  }
+  .icon-i i{
+      padding-left: 7px;
+      color: #013220;
+  }
+  .add-card{
+      width: 280px;
+      height: 37px;
+      padding: 0px 16px;
+      background: rgba(1, 50, 32, 0.1) !important;
+      font-family: 'Lato', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+      color: #013220;
+      border-radius: 3px;
+      border: none;
+  }
+  
+  .icons{
+      padding-bottom: 26.25px;
+      
+  }
+  .buy-now{
+      width: 280px;
+      height: 37px;
+      padding: 0px 16px;
+      gap: 10px;
+      background-color: #013220 !important;
+      font-family: 'Lato', sans-serif;
+      font-weight: 600px;
+      font-size: 14px;
+      line-height: 21px;
+      color: #E4E3E8;
+      border: none;
+      border-radius: 3px;
+  }
+  .add-card-block{
+      padding-bottom: 8px;
+  }
+  .buy-now-block{
+      padding-bottom: 10px;
+  }
+  .heart-row{
+      width: 100%;
+      padding-bottom: 5px;
+      
+  }
+  
+  
+  .first-row{
+      padding-bottom: 24px;
+  }
+  .second-row{
+      padding-bottom: 68px;
+  }
+  .view-more{
+      border:1px solid #52525C;
+      font-family: 'Lato', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      color: #18171D;
+      padding: 8px 16px;
+      
+  }
+  *{
+    background:white !important;
+  }
+  
+  
+  //my data //
+  
+  
+  // .bg-banner {
+  //     background-image: url("../../assets/banners/banner-ring.jpg");
+  //     height: 400px;
+      
+      
+  // }
+  .b-img {
+      height: 400px;
+      width: 100%;
+  }
+  .bg-banner p {
+      padding-top: 136px;
+      padding-left: 80px;
+      color: #FFFFFF;
+      line-height: 28.8px;
+      font-size: 24px;
+      font-weight: 300;
+      letter-spacing: 2%;
+      font-family: "Lato", sans-serif;
+      
+  
+  }
+  .bg-banner::before {
+      content: ""; // ::before and ::after both require content
+      position: absolute;
+      top: 48px;
+      left: 0;
+      width: 100%;
+      height: 401px;
+      background-color: rgba(0, 0, 0, 0.8);
+      opacity: .7;
+  }
+  .bg-banner::before {
+      z-index: 1;
+  }
+  .bg-banner > * {
+      z-index: 100;
+  }
+  
+  .banner-head {
+      height: 83px;
+      width: 418px;
+  }
+  .folders-paragraph {
+      padding-top: 24px;
+      font-size: 12px;
+      font-weight: 400;
+      font-family: 'Lato', sans-serif;
+      line-height: 14.4px;
+      color: #6E7191;
+  
+  }
+  
+  
+  .drop-down-css {
+      margin-left: 15px;
+      margin-right: 15px;
+      font-size: 14px
+      color #4E4B66;
+      border-radius: 3px;
+      background-color: rgba(1, 50, 32, 0.12);
+  }
+  .dropdown-menu{
+    z-index: 0;
+  }
+  .dropdown-text {
+      font-size: 14px;
+      color: #4E4B66;
+      border: 0px solid transparent !important;
+      text-transform: uppercase;
+      line-height: 16.8px;
+      letter-spacing: 1.15%;
+      background: rgba(1, 50, 32, 0.12) !important;
+      border-radius: 3px;
+  }
+  .filter-by-text {
+      font-size: 14px;
+      color: #242330;
+      text-transform: capitalize;
+      position: relative;
+      line-height: 30px;
+  }
+  .filter-by-text ::first-letter {
+      text-transform: uppercase;
+  }
+  
+  
+  
+  
+  
+  
+  

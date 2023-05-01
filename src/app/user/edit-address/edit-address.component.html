@@ -1,0 +1,87 @@
+<section class="header-margin-topEx">
+
+</section>
+<section class="min-height mb-2">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card p-4">
+            <div class="address-edit-settings">
+              <h5>Edit Address</h5>
+              <section class="mt-4">
+                <div *ngIf="addressDetails">
+                  <div class="w-100">
+                    <div *ngIf="!!errorMessage" class="form-group">
+                      <div class="alert alert-danger">
+                        <i class="fas fa-exclamation-triangle"></i> &nbsp; {{errorMessage}}
+                      </div>
+                    </div>
+                    <div *ngIf="!!successMessage" class="form-group">
+                      <div class="alert alert-success">
+                        <i class="fas fa-check"></i> &nbsp; {{successMessage}}
+                      </div>
+                    </div>
+                  </div>
+ 
+                  <form class="from w-100" role="form" [formGroup]="form1" (ngSubmit)="onSubmit1()"
+                    [ngClass]="{'was-validated': (submitted && form1.valid), 'needs-validation': (submitted)}">
+ 
+                    <div class="form-group ">
+                      <label class="my-2 mx-1">Title <span class="mandatory">*</span></label>
+                      <input type="text" class="form-control" formControlName="title" placeholder="Enter Title">
+ 
+ 
+                    </div>
+ 
+                    <div class="form-group ">
+                      <label class="my-2 mx-1">Address <span class="mandatory">*</span></label>
+                      <textarea type="email" class="form-control" formControlName="address" autocomplete="off"
+                        placeholder="Enter Address"></textarea>
+ 
+ 
+                    </div>
+ 
+                    <div class="form-group ">
+                      <label class="my-2 mx-1">City <span class="mandatory">*</span></label>
+                      <input type="text" class="form-control" formControlName="city" autocomplete="off"
+                        placeholder="Enter city">
+ 
+ 
+                    </div>
+                    <div class="form-group ">
+                      <label class="my-2 mx-1">State <span class="mandatory">*</span></label>
+                      <select class="form-control" formControlName="state_id" autocomplete="off">
+                        <option *ngFor="let state of states" value="{{state['id']}}">{{state['name']}}</option>
+                      </select>
+ 
+ 
+                    </div>
+                    <div class="form-group ">
+                      <label class="my-2 mx-1">Pincode <span class="mandatory">*</span></label>
+                      <input type="text" class="form-control" formControlName="zip" pattern="^[1-9][0-9]{5}$"
+                        placeholder="Enter Pincode" autocomplete="off">
+ 
+ 
+                    </div>
+ 
+                    <div class="form-group mt-4">
+                      <button type="submit" class="btn-clr btn btn-primary btn-block">
+                        Submit
+                      </button>
+                    </div>
+ 
+                    <!-- /.card-footer -->
+                  </form>
+                </div>
+ 
+ 
+ 
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+  </section>
+ 

@@ -1,0 +1,112 @@
+<section class="header-margin-topEx">
+
+</section>
+<section class="min-height mb-3">
+  <div class="container">
+    <div class="row mt-5 justify-content-center">
+      <div class="col-md-6">
+        <div class="card p-4">
+          <div class="address-add-settings">
+            <h5>Add Address</h5>
+            <section class="mt-4">
+              <div class="row">
+                <div class="w-100">
+                  <div *ngIf="!!errorMessage" class="form-group">
+                    <div class="alert alert-danger">
+                      <i class="fas fa-exclamation-triangle mr-2"></i> {{errorMessage}}
+                    </div>
+                  </div>
+                  <div *ngIf="!!successMessage" class="form-group">
+                    <div class="alert alert-success">
+                      <i class="fas fa-check mr-2"></i> {{successMessage}}
+                    </div>
+                  </div>
+                </div>
+                <form class="from d-block w-100" role="form" [formGroup]="form" (ngSubmit)="onSubmit()"
+                  [ngClass]="{'was-validated': (submitted && form.valid), 'needs-validation': (submitted)}">
+                  <div class="container profile-update">
+                    <div class="form-group ">
+                      <label class="py-2">Title <span class="mandatory">*</span></label>
+                      <input type="text" class="form-control" formControlName="title" placeholder="Enter Title"
+                        autocomplete="off" [ngClass]="{ 'is-invalid':submitted &&
+                        f['title'].errors }">
+
+                      <div class="invalid-feedback" *ngIf="form.get('title')?.hasError('required')">This field is
+                        required</div>
+
+                    </div>
+                    <div class="form-group ">
+                      <label class="py-2">Address <span class="mandatory">*</span></label>
+                      <textarea class="form-control" formControlName="address" autocomplete="off"
+                        placeholder="Enter Address" [ngClass]="{ 'is-invalid': submitted &&
+                        f['address'].errors }"></textarea>
+
+                      <div class="invalid-feedback" *ngIf="form.get('address')?.hasError('required')">This field is
+                        required
+                      </div>
+
+                    </div>
+                    <div class="form-group ">
+                      <label class="py-2">City <span class="mandatory">*</span></label>
+                      <input type="text" class="form-control" formControlName="city" autocomplete="off"
+                        placeholder="Enter city" [ngClass]="{ 'is-invalid': submitted &&
+                        f['city'].errors }">
+                      <div class="invalid-feedback" *ngIf="form.get('city')?.hasError('required')">This field is
+                        required
+                      </div>
+
+                    </div>
+
+                    <div class="form-group">
+                      <div class="form-row">
+                        <div class="col-lg-6">
+                          <label class="py-2">State <span class="mandatory">*</span></label>
+                          <select class="form-control" formControlName="state_id" autocomplete="off" [ngClass]="{ 'is-invalid': submitted &&
+                            f['state_id'].errors }" aria-placeholder="Select State">
+                            <option *ngFor="let state of states" value="{{state['id']}}">{{state['name']}}</option>
+                          </select>
+                          <div class="invalid-feedback" *ngIf="form.get('state_id')?.hasError('required')">This field is
+                            required
+                          </div>
+
+                        </div>
+
+                        <div class="col-lg-6">
+                          <label class="py-2">Pincode <span class="mandatory">*</span></label>
+                          <input type="text" class="form-control" formControlName="zip" pattern="^[1-9][0-9]{5}$"
+                            placeholder="Enter Pincode" autocomplete="off" [ngClass]="{ 'is-invalid': submitted &&
+                              f['zip'].errors }">
+
+                          <div class="invalid-feedback" *ngIf="form.get('zip')?.hasError('required')">This field is
+                            required
+                          </div>
+                          <div class="invalid-feedback" *ngIf="form.get('zip')?.hasError('min')">Atleast minimum 6
+                            digits
+                            <code></code>
+                          </div>
+                          <div class="invalid-feedback" *ngIf="form.get('zip')?.hasError('pattern')">Enter Correct
+                            pincode
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="form-group mt-4">
+                      <button type="submit" class="btn btn-primary btn-block add-sub">
+                        Add Address
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- /.card-footer -->
+                </form>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

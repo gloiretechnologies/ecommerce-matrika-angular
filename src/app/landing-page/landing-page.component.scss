@@ -1,0 +1,912 @@
+.container{
+    width: 1380px !important;
+  }
+.container-custom{
+      width: 1640px !important;
+  }
+  .min-height{
+    height: 74vh;
+  }
+  
+  ///caroulsel
+  .carousel-row{
+    padding-bottom: 25px !important;
+  }
+  .card10{
+    width: 250px;
+    border-radius: 2% !important; 
+    border: 0.1px  solid #D9D9D9;
+    height: 300px;
+  }
+  .card10 img{
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    margin: 0px auto !important;
+  }
+  .owl-img-block {
+    margin: 0px auto !important;
+  }
+ 
+  .padding-product{
+    padding-top: 20px;
+  }
+  //////////////////////////////////
+  
+  ///MATRIKA
+  body{
+    background: #F4F4F6;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap');
+  
+  
+  .card{
+      width: 312px;
+      height: 410px;
+      // background-color: #F4F4F6;
+      border: none;
+      border-radius: 2% !important; 
+      border: 0.1px  solid #D9D9D9;
+  }
+  .gold-ring img{
+      width: 200px;
+      height: 150px;
+      cursor: pointer;
+  }
+  .gold-ring{
+      margin: auto;
+     padding-bottom: 24px;
+  }
+  .card-container{
+      margin-left: 16px; 
+  }
+  .diamond {
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      color: #4E4B66;
+      letter-spacing: 1.15%;
+     
+  
+  }
+  
+  .icon-heart{
+      width: 20px;
+      height: 20px;
+    
+  }
+  .price{
+      padding-right: 8px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 21px; 
+      color:  #FF7215;
+      letter-spacing:2%;
+      
+  }
+  .strike-block{
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 14.06px;
+      color:  #6E7191;
+      text-decoration: line-through;
+  }
+  .price-block{
+      padding-bottom: 4px;
+  }
+  .zero-block{
+      padding-bottom: 7.5px;
+  }
+  .zero{
+      color: #FF7215;
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14.4px;
+      letter-spacing: 1.15%;
+  
+  
+  }
+  .icons ul {
+      display: inline;
+  }
+  .icons ul li{
+      list-style: none;
+      display: inline;
+  }
+  .icon-i i{
+      padding-left: 7px;
+      color: #013220;
+  }
+  .add-card{
+      width: 280px;
+      height: 37px;
+      padding: 0px 16px;
+      background: rgba(1, 50, 32, 0.1) !important;
+      font-family: 'Lato', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+      color: #013220;
+      border-radius: 3px;
+      border: none;
+  }
+  
+  .icons{
+      padding-bottom: 26.25px;
+      
+  }
+  .buy-now{
+      width: 280px;
+      height: 37px;
+      padding: 0px 16px;
+      gap: 10px;
+      background-color: #013220 !important;
+      font-family: 'Lato', sans-serif;
+      font-weight: 600px;
+      font-size: 14px;
+      line-height: 21px;
+      color: #E4E3E8;
+      border: none;
+      border-radius: 3px;
+  }
+  .add-card-block{
+      padding-bottom: 8px;
+  }
+  .buy-now-block{
+      padding-bottom: 10px;
+  }
+  .heart-row{
+      width: 100%;
+      padding-bottom: 5px;
+      
+  }
+  
+  
+  .first-row{
+      padding-bottom: 24px;
+  }
+  .second-row{
+      padding-bottom: 68px;
+  }
+  .view-more{
+      border:1px solid #52525C;
+      font-family: 'Lato', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      color: #18171D;
+      padding: 8px 16px;
+      
+  }
+//   *{
+//     background:white !important;
+//   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////my new data //
+.neck img{
+    width: 100%;
+    height: 500px;
+  }
+  .background-img{
+    background-image: url('../../assets/Frame\ 98.png');
+    width: 100%;
+    height: 140px;
+  }
+  .live{
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28.8px;
+    letter-spacing: 2%;
+    color: #FFFFFF;
+    
+  }
+  .gold-block{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.2px;
+    letter-spacing: 2%;
+    color:#FFFFFF;
+  }
+  .gold-block2{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.2px;
+    letter-spacing: 2%;
+    color: #FFFFFF;
+    padding-left: 6px;
+
+    
+  }
+  .date{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.8px;
+    letter-spacing: 2%;
+    color: #FFFFFF;
+
+  }
+  .time{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.8px;
+    letter-spacing: 2%;
+    color: #FFFFFF;
+    padding-left: 40px;
+  }
+  .first-row{
+    padding-bottom: 24px;
+  }
+  .six{
+    
+    padding-top: 32px;
+    padding-bottom: 48px;
+    font-family: 'Crimson Text', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 30px;
+    line-height: 38.99px;
+    letter-spacing: 3%;
+    color: #013220;
+
+  }
+  .back-ground{
+    background: rgba(1, 50, 32, 0.12);
+    border-radius: 3px;
+    width: 85%;
+    height: 225px;
+    
+  }
+  .png-icon img{
+    width: 32px;
+    height: 32px;
+  }
+  .live-row{
+    padding-bottom: 40px;
+  }
+  .banner-para{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.4px;
+    letter-spacing: 1%;
+    color: #27262B;
+
+  }
+  .goldsikka-img img{
+    height: 400px;
+
+  }
+  .goldsikka-img{
+    padding-bottom: 100px;
+  }
+  .purity-block{
+    padding-top: 43px;
+    padding-bottom: 24px;
+  }
+  .purity{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38.4px;
+    letter-spacing: 1%;
+    color: #013220;
+  }
+  .lorum{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #27262B;
+  }
+  .couple-img{
+    background-image: url('../../assets/couple2.png');
+    width: 665px;
+    height: 544px;
+
+  }
+  .top{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    font-style: italic;
+    line-height: 38.4px;
+    letter-spacing: 3%;
+    color:#013220 ;
+
+  }
+  .ear-rings img{
+    width: 100px;
+    height: 113px;
+    cursor: pointer;
+
+  }
+  .earning{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.8px;
+    letter-spacing: 3%;
+    color: #242330;
+    cursor: pointer;
+    
+
+  }
+  .ear-rings{
+    padding-bottom: 10px;
+  }
+  .top-block{
+    padding-bottom: 98px;
+  }
+  .ring-block img{
+    width: 240px;
+    height: 183.53px;
+    padding-top: 24px;
+    object-fit: cover;
+
+  }
+  .cards{
+    width: 312px;
+    height: 360px;
+    border-radius: 6px;
+    border: 0.3px solid #D9D9D9;
+    border-radius: 6px;
+  }
+  .akira{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.2px;
+    letter-spacing: 1.15%;
+    color: #4E4B66;
+  }
+  .ring-block{
+    padding-bottom: 80px;
+  }
+  .doller{
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21.6x;
+    letter-spacing: 2%;
+    color: #FF7215;
+
+  }
+  .doller2{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.2px;
+    color: #6E7191;
+    padding-left: 10px;
+    text-decoration: line-through;
+    
+
+  }
+  .akira-block{
+    padding-bottom: 10px;
+  }
+  .ring1-block img{
+    width: 208px;
+    height: 208px;
+    object-fit: cover;
+    padding-top: 15px;
+    
+  }
+  .ring1-block{
+    padding-bottom: 54px;
+  }
+  .ring2-block img{
+    width: 186px;
+    height: 189px;
+    padding-top: 21px;
+    object-fit: cover;
+
+  }
+  .ring2-block{
+    padding-bottom: 67px;
+  }
+  .ring3-block img{
+    width: 208px;
+    height: 194px;
+    padding-top: 32px;
+    object-fit: cover;
+
+
+  }
+  .ring3-block{
+    padding-bottom: 57px;
+  }
+  .ear-row{
+    padding-bottom: 80px;
+  }
+  .ring-block-row{
+    padding-bottom: 100px;
+  }
+  .desirable{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 32px;
+    line-height: 38.4px;
+    letter-spacing: 3%;
+    color: #013220;
+    
+  }
+  .girl1-img img{
+    width: 312px;
+    height: 288px;
+    object-fit: cover;
+    
+  }
+  .girl2-img img{
+    width: 312px;
+    height: 600px;
+    object-fit: cover;
+    
+  }
+  .girl4-img img{
+    object-fit: cover;
+  }
+  .girl1-img{
+    padding-bottom: 23px;
+  }
+  .girl5-img img{
+    height: 288px;
+    width: 312px;
+    object-fit: cover;
+  }
+  .girl3-img{
+    padding-bottom: 23px;
+  }
+  .girl6-img img{
+    width: 312px;
+    height: 288px;
+    object-fit: cover;
+  }
+  .desirable-row{
+    padding-bottom: 78px;
+  }
+  .together-img img{
+    width: 648px;
+    height: 400px;
+    object-fit: cover;
+
+  }
+  .back-ground-clor{
+    height: 400px;
+    background: rgba(1, 50, 32, 0.1);
+    border-radius: 4px;
+    width: 660px;
+  }
+  .dont{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38.4px;
+    letter-spacing: 1%;
+    color: #013220;
+  }
+  .dont-block{
+    padding-top: 70px;
+    padding-bottom: 16px;
+  }
+ 
+  .my-para{
+    padding: 0px 60px;
+    padding-bottom: 32px;
+  }
+  .my-para-block{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 30px;
+    color: #4E4B66;
+    
+
+  }
+  .locateus{
+    background-color: #013220;
+    width: 109px;
+    height: 33px;
+    border-radius: 3px;
+    padding: 8px 16px 8px 16px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16.8px;
+    letter-spacing: 2%;
+    color: #FFFFFF;
+  }
+  .girls-row{
+    padding-bottom: 100px;
+  }
+
+
+  ////
+  .address{
+    margin-left: 24px;
+    width: 200px;
+    height: 37px;
+    border-radius: 3px;
+    color: #52525C;
+    border: 1px solid #52525C;
+    padding-left: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    
+
+}
+.subscribe-button{
+    margin-left: 28px;
+    width: Hug(136px);
+    height: 37px;
+    border-radius: 3px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #013220;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #E4E3E8;
+}
+.my-button{
+    padding-bottom: 88px;
+}
+.subscribe-button{
+    border: none;
+}
+.address{
+    margin-bottom: 80px;
+}
+.sub-head{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #013220;
+    
+
+}
+.main-head{
+    padding-bottom: 16px;
+}
+.sub-para{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #52525C;
+
+}
+.main-para{
+    padding-bottom: 56px;
+}
+.dont-row{
+  padding-bottom: 100px;
+}
+.flower-img img{
+  width: 180px;
+  height:60px;
+}
+.eye-contact-img img{
+  width: 100%;
+  height: 500px;
+}
+
+.eye-contact-row{
+  padding-bottom: 12px;
+  padding-top: 30px;
+}
+.showing-ring:hover > img {
+  transform: scale(1.3)
+}
+
+.showing-ring{
+    width: 648px;
+    height: 360px;
+    overflow: hidden;
+}
+.showing-ring > img{
+  width: 100%;
+  height: 100%;
+  transition: all 2s ease !important;
+  object-fit: cover;
+  
+}
+.eye-contact-row{
+  padding-bottom: 12px;
+  padding-top: 30px;
+}
+.for-him{
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28.8px;
+  letter-spacing: 3%;
+  color: #013220;
+
+}
+
+.lorum4{
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 30px;
+  color: #4E4B66;
+  
+}
+.shop-now{
+  width: 99px;
+  height: 33px;
+  border-radius: 3px;
+  padding: 8px 16px 8px 16px;
+  gap: 10px;
+  background-color: #013220;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16.8px;
+  letter-spacing: 2%;
+  color: #FFFFFF;
+  border: none;
+
+}
+.lorum-block{
+  padding-bottom: 32px;
+  min-height: 42vh;
+}
+.for-him-block{
+  padding-bottom: 16px;
+}
+.showing-ring-row{
+  padding-bottom: 100px;
+}
+.showing-ring-row{
+  padding-bottom: 100px;
+}
+.a-sepecial-gift{
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 32px;
+  line-height: 38.4px;
+  letter-spacing: 3%;
+  color: #013220;
+
+  
+}
+.live-price-web{
+  width: 18px;
+  height: 18px;
+  margin-top: -5px;
+ 
+}
+.live-block span{
+  padding-left: 16px;
+}
+
+
+
+ ///animation
+ @import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
+ 
+ .thumbnail {
+  position: relative;
+  width: 312px;
+  height: 288px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  margin-bottom: 22px;
+}
+.thumbnail > img {
+width: 100%;
+height: 100%;
+transition: all 2s ease !important;
+object-fit: cover;
+
+}
+.thumbnail div {
+position: absolute;
+background: rgba(1,1,1,0.8);
+color: #fff;
+width: 100%;
+height: 100%;
+opacity: 0;
+transition: all 0.3s ease;
+line-height: 300px;
+text-align: center;
+font-size: 30px;
+z-index: 2
+
+}   
+.thumbnail:hover > img {
+transform: scale(1.3)
+}
+.thumbnail:hover > div {
+opacity: 1
+}
+
+.thumbnail2 {
+position: relative;
+width: 312px;
+height: 600px;
+margin-bottom: 10px;
+overflow: hidden
+}
+.thumbnail2 > img {
+width: 100%;
+height: 100%;
+transition: all 2s ease !important;
+object-fit: cover;
+
+}
+.thumbnail2 div {
+position: absolute;
+background: rgba(1,1,1,0.8);
+width: 100%;
+height: 100%;
+opacity: 0;
+align-items: center;
+text-align: center;
+transition: all 0.3s ease;
+font-size: 10px;
+z-index: 2;
+
+
+}
+.text{
+position: absolute;
+top: 40%;
+font-size: 28px;
+font-family: 'Rouge Script', cursive;
+font-weight: 400;
+color: #5CFF33;
+width: 100%;
+line-height: 36px;
+letter-spacing: 3%;
+}
+.text1{
+position: absolute;
+top: 28%;
+padding: 0px 15px;
+font-size: 28px;
+font-family: 'Rouge Script', cursive;
+font-weight: 400;
+color: #D59C28;
+width: 100%;
+line-height: 36px;
+letter-spacing: 3%;
+}
+.text2{
+position: absolute;
+top: 28%;
+padding: 0px 15px;
+font-size: 28px;
+font-family: 'Rouge Script', cursive;
+font-weight: 400;
+color: #337FFF;
+width: 100%;
+line-height: 36px;
+letter-spacing: 3%;
+}
+.text3{
+position: absolute;
+top: 35%;
+padding: 0px 15px;
+font-size: 28px;
+font-family: 'Rouge Script', cursive;
+font-weight: 400;
+color: #FF56F8;
+width: 100%;
+line-height: 36px;
+letter-spacing: 3%;
+}
+.text4{
+position: absolute;
+top: 35%;
+padding: 0px 15px;
+font-size: 28px;
+font-family: 'Rouge Script', cursive;
+font-weight: 400;
+color: #D59C28;
+width: 100%;
+line-height: 36px;
+letter-spacing: 3%;
+}
+.text5{
+position: absolute;
+top: 35%;
+padding: 0px 15px;
+font-size: 28px;
+font-family: 'Rouge Script', cursive;
+font-weight: 400;
+color: #5CFF33;
+width: 100%;
+line-height: 36px;
+letter-spacing: 3%;
+}
+
+.thumbnail2:hover > img {
+transform: scale(1.3)
+}
+.thumbnail2:hover > div{
+opacity: 1
+}
+
+.thumbnail3 {
+position: relative;
+width: 648px;
+height: 288px;
+margin-bottom: 10px;
+overflow: hidden;
+margin-bottom: 22px;
+
+}
+.thumbnail3 > img {
+width: 100%;
+height: 100%;
+transition: all 2s ease !important;
+object-fit: cover;
+
+}
+.thumbnail3 div {
+position: absolute;
+background: rgba(1,1,1,0.8);
+color: #fff;
+width: 100%;
+height: 100%;
+opacity: 0;
+transition: all 0.3s ease;
+line-height: 300px;
+text-align: center;
+font-size: 30px;
+z-index: 2
+
+}
+.thumbnail3:hover > img {
+transform: scale(1.3)
+}
+.thumbnail3:hover > div {
+opacity: 1
+}
+
+  
+ 
+  
+  
+  
+  
+  
+  
+  

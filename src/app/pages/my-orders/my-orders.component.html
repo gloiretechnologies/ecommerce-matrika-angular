@@ -1,0 +1,187 @@
+
+<section class="header-margin-top">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12 text-center m-auto">
+              <div class="track-block my-3">
+                  <span class="track">TRACK YOUR ORDER </span>
+              </div>
+             <div class="border-block">
+              <div class="border-line m-auto">
+
+              </div>
+             </div>
+             <div class="order-block">
+              <span class="order">ORDER TRACKING</span>
+             </div>
+             <div class="w-75 m-auto have-block">
+              <span class="have">Have your order number handy. Please enter the order number and email address below. The information shown is basedon the FedEx ®, USPS, DHL-Bluedart tracking numbers for your individual order</span>
+             </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="number-order-block">
+              <span class="numbers-order">Number of orders <span *ngIf="len===null">(0)</span><span>({{len}})</span></span>
+          </div>
+          <div class="row main-order-row" >
+              <div class="col-md-6 my-3" *ngFor="let data of myorders">
+                  <div class="row six-col-row">
+                       <div class="col-md-4">
+                         <div class="track-card">
+                          <div class="track-ring text-center">
+                              <img src="../../../assets/rings/gold-ring2.png">
+                          </div>
+                          <div class="text-center all-order-items-block">
+                              <button class="all-order-items" (click)="onImage(data.order_id,data.userid)" data-bs-toggle="modal" data-bs-target="#exampleModal1">All Order Items</button>
+                          </div>
+                         </div>
+                       </div>
+                       <div class="col-md-8">
+                          <div class="row download-row">
+                              <div class="col-md-5">
+                                  <div class="price-order-blockS">
+                                      <span class="price-order">Total Order Price</span>
+                                  </div>
+                                  <div class="price-order-block">
+                                      <span class="price-order">No of Products</span>
+                                  </div>
+                                  <div>
+                                      <span class="price-order">Order Id</span>
+                                  </div>
+                              </div>
+                              <div class="col-md-2">
+                                  <div class="price-order-blockS">
+                                      <span>:</span>
+                                  </div>
+                                  <div class="price-order-block">
+                                      <span>:</span>
+                                  </div>
+                                  <div>
+                                      <span>:</span>
+                                  </div>
+                              </div>
+                              <div class="col-md-3">
+                                  <div class="text-end price-order-blockS">
+                                      <span class="order-doller">{{data.totalprice}}</span>
+                                  </div>
+                                  <div class="text-end price-order-block">
+                                      <span>{{data.no_of_products}}</span>
+                                  </div>
+                                  <div class="text-end">
+                                      <span class="number-para">{{data.order_id}}</span>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <div class="downlaod-receipet-block">
+                                      <button class="downlaod-receipet" (click)="downloadPdf(data.order_id)">Download Receipet</button>
+                                  </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div>
+                                      <button class="track-order-btn" (click)="getordertracking(data.order_id)" data-bs-toggle="modal"
+                                      data-bs-target="#exampleModal">Track Your Order</button>
+                                  </div>
+                              </div>
+                             </div>
+                       </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+<!-- //model-1 -->
+<section>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Order tracking Status</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <section class="bg-light shadow">
+            <div class="order-track">
+              <div class="order-track-step" *ngFor="let data of ordertracking">
+                <div class="order-track-status">
+                  <span class="order-track-status-dot" *ngIf="data.status==false"></span>
+                  <span class="order-track-status-line" *ngIf="data.status==false"></span>
+                  <span [ngClass]="data.message=='Order Cancelled at Goldsikka' ? 'order-track-status-dot2' : 'order-track-status-dot1'"  *ngIf="data.status==true"></span>
+                  <span class="order-track-status-line1" *ngIf="data.status==true"></span>
+                  <!-- <span  *ngIf="data.message==Order Cancelled at Goldsikka" style="color: red;">iub</span> -->
+
+                  <!-- <span class="order-track-status-line1" *ngIf="data.message=='Order Cancelled at Goldsikka'"></span> -->
+
+                </div>
+                <div class="order-track-text">
+                  <p class="order-track-text-stat" *ngIf="data.status==false">{{data.message}}</p>
+                  <p class="order-track-text-stat1" *ngIf="data.status==true">{{data.message}}</p>
+                  <!-- <p class="order-track-text-stat1" *ngIf="data.status==true" style="background-color: red;">{{data.message}}</p> -->
+
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- //model=2 -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Order Items</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container" *ngFor="let item of info">
+          <div class="row modal-row">
+            <div class="col-md-3">
+              <img id="myimage" class="modal-img" src="{{item.image_uri}}" alt="">
+            </div>
+            <div class="col-md-9 m-auto">
+              <p class="sub">{{item.pname}}</p>
+              <p class="name">{{item.subcatname}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  

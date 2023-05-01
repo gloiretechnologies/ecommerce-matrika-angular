@@ -1,0 +1,121 @@
+<section class="back header-margin-top pb-4">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card p-4 mt-4">
+            <div class="bank-add-settings">
+              <h1>Add Bank</h1>
+  
+              <section class="mt-4">
+                <div class="w-100">
+                  <div *ngIf="!!errorMessage" class="form-group">
+                    <div class="alert alert-danger">
+                      <i class="fas fa-exclamation-triangle"></i> &nbsp; {{errorMessage}}
+                    </div>
+                  </div>
+                  <div *ngIf="!!successMessage" class="form-group">
+                    <div class="alert alert-success">
+                      <i class="fas fa-check"></i> &nbsp; {{successMessage}}
+                    </div>
+                  </div>
+                </div>
+  
+                <form class="from w-100" role="form" [formGroup]="form" (ngSubmit)="onSubmit()"
+                  [ngClass]="{'was-validated': (submitted && form.valid), 'needs-validation': (submitted)}">
+  
+                  <div class="form-group ">
+                    <label>Name on Account <small>(as per bank account)</small> <span class="mandatory">*</span></label>
+  
+                    <input type="text" class="form-control" formControlName="name_on_account"
+                      placeholder="Enter Name on the Account" autocomplete="off" [ngClass]="{ 'is-invalid': submitted &&
+                      f['name_on_account'].errors }">
+                    <div *ngIf="submitted && f['name_on_account'].errors" class="invalid-feedback">
+                      <div *ngIf="f['name_on_account'].errors['required']">Fullname is required</div>
+                    </div>
+                  </div>
+  
+                  <div class="form-group ">
+                    <label>Account Number <span class="mandatory">*</span></label>
+                    <input type="number" class="form-control" formControlName="account_number" autocomplete="off"
+                      placeholder="Enter Account Number" [ngClass]="{ 'is-invalid': submitted &&
+                      f['account_number'].errors }" />
+  
+  
+  
+                    <div *ngIf="submitted && f['account_number'].errors" class="invalid-feedback">
+                      <div *ngIf="f['account_number'].errors['required']">Field is required</div>
+                      <div *ngIf="f['account_number'].errors['minlength']">
+                        Ifsc code must be at least 10 characters
+                      </div>
+                      <div *ngIf="f['account_number'].errors['maxlength']">
+                        Ifsc code
+                        maximum length
+                        20 characters
+                      </div>
+                    </div>
+  
+  
+  
+                  </div>
+  
+                  <div class="form-group ">
+                    <label>Bank Name <span class="mandatory">*</span></label>
+                    <input type="text" class="form-control" formControlName="bank_name" autocomplete="off"
+                      placeholder="Enter Bank Name" [ngClass]="{ 'is-invalid': submitted &&
+                      f['bank_name'].errors }">
+  
+                    <div class="invalid-feedback" *ngIf="form.get('bank_name')?.hasError('required')">This field is
+                      required
+                    </div>
+  
+                  </div>
+  
+                  <div class="form-group ">
+                    <label>Branch <span class="mandatory">*</span></label>
+                    <input type="text" class="form-control" formControlName="bank_branch" autocomplete="off"
+                      placeholder="Enter Branch Name" [ngClass]="{ 'is-invalid': submitted &&
+                      f['bank_branch'].errors }">
+  
+                    <div class="invalid-feedback" *ngIf="form.get('bank_branch')?.hasError('required')">This field is
+                      required
+                    </div>
+  
+                  </div>
+  
+                  <div class="form-group ">
+                    <label>IFSC Code <span class="mandatory">*</span></label>
+                    <input type="text" class="form-control" formControlName="ifsc_code" placeholder="Enter IFSC Code"
+                      autocomplete="off" [ngClass]="{ 'is-invalid': submitted &&
+                      f['account_number'].errors }">
+  
+                    <div class="invalid-feedback" *ngIf="form.get('ifsc_code')?.hasError('required')">This field is
+                      required
+                    </div>
+                    <div class="invalid-feedback" *ngIf="form.get('ifsc_code')?.hasError('minlength')">Ifsc code minimum
+                      length 8
+                      characters
+                    </div>
+                    <div class="invalid-feedback" *ngIf="form.get('ifsc_code')?.hasError('maxlength')">Ifsc code maximum
+                      length 20
+                      characters
+                    </div>
+  
+                  </div>
+  
+                  <div class="form-group mt-4">
+                    <button type="submit" class="btn btn-primary btn-block add-sub">
+                      Add Bank
+                    </button>
+                  </div>
+  
+                  <!-- /.card-footer -->
+                </form>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </section>
+  

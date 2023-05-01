@@ -1,0 +1,243 @@
+<section class="header-margin-top">
+    <div class="container">
+        <div class="row my-top">
+
+            <div class="col-md-3">
+
+            </div>
+
+            <div class="col-md-3">
+                <div class="edit-img-sec">
+                    <img src="../../../assets/icons/edit.png" alt="edit" width="20px;" height="20px;">
+                </div>
+               <p class="head-sec mt-4">Check Details</p>
+            </div>
+
+            <div class="col-md-3">
+                <div class="edit-img-sec2">
+                    <img src="../../../assets/icons/truckfast.png" alt="truckfast" width="20px;" height="20px;">
+                </div>
+                <p class="head-sec2 mt-4">Shipping Address</p>
+            </div>
+
+            <div class="col-md-3">
+                <div class="edit-img-sec2">
+                <img src="../../../assets/icons/cardpos.png" alt="cardpos" width="20px;" height="20px;">
+                </div>
+                <p class="head-sec2 mt-4">Payment</p>
+            </div>
+
+        </div>
+    </div>
+</section>    
+
+<section>
+    <div class="container mt-4">
+    <div class="row">
+
+    <div class="col-md-6">
+        <div class="d-felx ,mt-4">
+            <img src="{{img}}" alt="gold ring" width="400px;" height="400px;">
+            <img src="../../../assets/icons/heartBk.png" alt="heart" width="23px;" class="icon-img" (click)="wish(producedetails[0].id,producedetails[0].id)">
+            <img class="icon-img " width="23px;"  src="../../../assets/icons/bagBk.png" (click)="func1(producedetails[0].id,producedetails[0].size)">
+        </div>
+
+    <div class="row main">
+        <div class="col-8">
+            <div class="sub-imgs">
+                <img src="../../../assets/rings/kisspng-engagement-ring-diamond-wedding-ring-gold-cartier-diamond-ring-5aad0f203b2fa5.6728344115212910402424.png" alt="rings" width="48px;" height="48px;">
+                <img src="../../../assets/chains/kisspng-necklace-bracelet-jewellery-chain-gold-metal-necklace-5a7a6d2d257ce0.7881762615179727811536.png" alt="rings" width="48px;" height="48px;">
+                <img src="../../../assets/bangles/kisspng-bangle-bracelet-fluid-plunger-gasket-gold-bangles-5b312403aca1c4.8103671915299471397071.png" alt="rings" width="48px;" height="48px;">
+                <img src="../../../assets/ear rings/kisspng-earring-emerald-jewellery-gemstone-diamond-emerald-earrings-5a8057b03236a6.4558540515183604962057.png " alt="rings" width="48px;" height="48px;">
+            </div>
+            
+        </div>
+    </div>
+   
+    </div>
+
+    <div class="col-md-6 mt-4">
+        <div *ngIf="producedetails[0].pname!==giftPrdoduct">
+            <h5 class="heading">{{producedetails[0].pname}}</h5> 
+            <p class="para1 mt-3">{{producedetails[0].type}} Purity <span> :&nbsp;{{producedetails[0].carat}} carat</span> </p>
+            <p class="para2">Brand<span>:&nbsp;{{producedetails[0].brandname}}</span></p>
+            <p class="para1 mt-3">weight <span *ngIf="weightfilter!=null">:&nbsp;{{weightfilter}}grams</span>
+                <span *ngIf="weightfilter==null">:&nbsp;{{producedetails[0].weight}}grams</span></p>
+           <div *ngIf="producedetails[0].stoneprice!=0 && producedetails[0].pname!==giftPrdoduct ">
+            <p class="para1">Stone Name<span>:&nbsp;{{producedetails[0].stonename}}</span></p>
+           </div>
+           <div *ngIf="producedetails[0].stoneprice!=0 && producedetails[0].pname!==giftPrdoduct ">
+            <p class="para1">Stone Colour<span>:&nbsp;{{producedetails[0].stonecolor}}</span></p>
+           </div>
+           <div *ngIf="producedetails[0].stoneprice!=0 && producedetails[0].pname!==giftPrdoduct ">
+            <p class="para1">Stone Price<span>:&nbsp;{{producedetails[0].stoneprice |currency:'INR':'symbol':'3.0'}}</span></p>
+           </div>
+           <div>
+            <p *ngIf="finalprice2!=null&& producedetails[0].carat!=999">₹{{finalprice2| currency:'JPY':''}}/-</p>
+            <p *ngIf="finalprice2!=null&& producedetails[0].carat==999">₹{{finalprice3| currency:'JPY':''}}/-</p>
+            <p class="para3 mt-3" *ngIf="finalprice2==null "> ₹{{producedetails[0].totalprice| currency:'JPY':''}}/-</p>
+           </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-md-3 mt-4 mb-4">
+            <p class="para4">Size</p> 
+                <select name="" id="" class="drop-sec" #teams
+                (change)="onSelected(teams.value)">
+                <option selected="selected" disabled value="0">Select</option>
+                <option *ngFor="let size of producedetails[0].sizes " [value]="size.sizes">
+                  {{size.sizes}}</option>
+                    
+                </select>
+            <p class="ring-sec">Ring Chart Guide?</p>    
+        </div>
+
+           
+        </div>
+
+        <h5 style="font-size: 14px;">Price Breakup</h5>
+          
+            <div class="mt-4">
+                <table>
+                    <tr>
+                        <th>Gold</th>
+                        <th>Diamond</th>
+                        <th>Making</th>
+                        <th>Tax</th>
+                    </tr>
+                    <tr>
+                        <td>₹14,965.00</td>
+                        <td>₹10,435.00</td>
+                        <td>₹9,435.00</td>
+                        <td>₹4,435.00</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="mt-4">
+                <input type="text" placeholder="Enter Pincode" class="input-sec1">
+                <button type="button" class="but-subscribe">Subscribe now</button>
+                <span class="sub-text">(Dispatch by: Saturday, Feb 25, 23)</span>
+            </div>
+
+            <div>
+                <button type="button" class="continue-but" (click)="func1(producedetails[0].id,producedetails[0].size)">Continue</button> <br>
+                <p class="para5">Any Questions? Please Contact us at</p>
+            </div>
+                    <div class="mt-4" style="display: flex; justify-content: space-between;">
+                        <p><i class="fa-brands fa-whatsapp"></i><span>040 23222175</span></p>
+                        <p><i class="fa-brands fa-whatsapp"></i> <span>9989874992</span></p> 
+                        <p class="para-sec">100% Certified by  <br>
+                            International Standards</p>
+                    </div>
+            
+            </div>
+        </div>
+    </div> 
+</section> 
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h5 style="text-align: center;font-size: 16px;color: #242330;">Product Details</h5>
+            </div>
+
+            <div class="col-md-7">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container mt-4">
+        <div class="row main">
+            <div class="col-md-2">
+                <h5>Basic Information</h5> <br>
+                    <div>
+                        <p>Product Type</p>
+                        <p>Brands</p>
+                        <p>Item Package Quality</p>
+                        <p>Gender</p>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h5></h5> <br>
+
+                    <div class="data-sec">
+                    <p>{{producedetails[0].catname}}</p>
+                    <p>{{producedetails[0].brandname}}</p>
+                    <p>1</p>
+                    <p>Men</p>
+                </div>
+                </div>
+                <div class="col-md-2">
+                    <h5>Metal Information</h5> <br>
+                    <div>
+                        <p>Metal Purity</p>
+                        <p>Metal Colour</p>
+                        <p>Gross Weight (g)</p>
+                        <p>Net Weight (g)</p>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="data-sec2">
+                        <h5></h5> <br>
+
+                        <p>{{producedetails[0].carat}}</p>
+                        <p>{{producedetails[0].type}}</p>
+                        <p>{{producedetails[0].weight}}</p>
+                        <p>2.5200</p>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h5>Stone Information</h5> <br>
+                    <div>
+                        <p>Stone Weight (g)</p> <br>
+
+                        <h5>Certification Information</h5> <br>
+                        
+                        <div class="style-sec">
+                            <p>Gold Certification</p>
+                            <p>Hallmark Certificate No.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-md-2 mt-2">
+                    <div>
+                        <h5></h5> <br>
+                        <p class="mt-2">0.06</p> <br>
+                    
+                        <div class="mt-4">
+                            <h5></h5> <br>
+
+                            <div class="style-sec">
+                                <p>BIS Hallmark 916</p>
+                                <p>HM/C-7790174629</p>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+

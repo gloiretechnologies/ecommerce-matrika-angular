@@ -1,0 +1,64 @@
+<!-- Login Page -->
+<section class="margin-top">
+
+</section>
+<section class="mt-5"  *ngIf="!showOtpScreen && !accountVerify">
+    <div class="container">
+        <div class="row p-3">
+            <div class="col-5">
+                <img class="login-img" src="../../assets/banners/auth-page-img.png" alt="welcome-img" class="auth-page-img" />
+            </div>
+            <div class="col-7 p-2">
+                <h2 class="auth-heading-login">Login</h2>
+                <p class="auth-para1-login">To Enjoy a seamless experience shopping</p>
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <input type="text" class="form-control auth-form-box-for-login" formControlName="email" required autofocus tabindex="1"
+                    placeholder="Enter your email/mobile number" aria-describedby="emailHelp" [ngClass]="{'is-invalid': (submitted && f.email.errors)}">
+                
+                <button [disabled]="loginForm.invalid" class="btn auth-page-continue-btn">CONTINUE</button>
+            </form><br>
+            <div *ngIf="errorMessage" style="color:red;margin: 0px auto;">
+                <p >{{errorMessage}}</p>
+
+            </div>
+                <p class="auth-para2-or">OR</p>
+                <button  class="btn auth-page-google-btn"><img src="../../assets/icons/auth-google-icon.png"
+                        alt="google-img" class="auth-google-icon" />LOGIN USING GOOGLE</button>
+                <p class="auth-para3-dont-have-account">Don't have an account? <span><a href=""
+                            class="auth-para3-dont-have-account-signup" routerLink="/register"> SIGN UP</a></span></p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="mt-5"  *ngIf="showOtpScreen">
+    <div class="container">
+        <div class="row p-3">
+            <div class="col-5">
+                <img src="../../assets/banners/auth-page-img.png" alt="welcome-img" class="auth-page-img" />
+            </div>
+            <div class="col-7 p-2">
+                <!-- <i class="fa-regular fa-circle-xmark auth-xmark"></i> -->
+                <h2 class="auth-heading-login">OTP</h2>
+                <p class="auth-para1-signup">Enjoy a seamless experience shopping</p>
+                <form>
+                   
+                        <ng-otp-input class="form-control auth-form-box-for-signup" (onInputChange)="onOtpChange($event)" [config]="{length:6}" class="otpInput">
+                        </ng-otp-input>
+                </form>
+                
+                
+                <!-- <button class="btn auth-page-continue-btn">Submit OTP</button> -->
+                <div class="form-group text-right my-3">
+                    <a class="text-info" (click)="registerResendOtp();" style="text-transform: capitalize;cursor: pointer;">Resend OTP</a>
+                  </div>
+                  <p *ngIf="successMessage" style="color: #013220;">{{successMessage}}</p>
+                  <p *ngIf="errorMessage" style="color: red;">{{errorMessage}}</p>
+
+            </div>
+        </div>
+        
+    </div>
+</section>

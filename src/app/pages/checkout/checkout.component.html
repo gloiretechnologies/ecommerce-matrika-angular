@@ -1,0 +1,283 @@
+<section class="header-margin-top">
+    <div class="container">
+        <div class="row text-center mt-4">
+            <h5 class="my-4">Checkout</h5>
+        </div>
+        <div *ngIf="hideCheckout" class=" mt-5 sty-g pb-4 offset-3 text-center">
+            No Products in Checkout
+        </div>
+    </div>
+    <section  class="min-height">
+        <div class="container" *ngIf="!hideCheckout">
+            <div class="row" >
+                <p class="cart-page-bag-head" *ngIf="arr.length<=1">Total ({{arr.length}} Item) </p>
+                <p class="cart-page-bag-head" *ngIf="arr.length>1">Total ({{arr.length}} Items)</p>
+            </div>
+            
+                <div class="row" >
+                    <div class="col-md-8" >
+                        <div class="row" >
+                            <div class="row mb-3 cart-page-detailed-container" *ngFor="let data of arr">
+                                <div class="col-sm-12 col-lg-4">
+                                    <img src="{{data.image_uri}}" alt="item-img" class="cart-page-item-img" />
+                                </div>
+
+                                <div class="col-sm-12 col-lg-8">
+                                    <p *ngIf="data.pname!='Gift Card'"
+                                        class="my-3 checkbox-product-header">{{data.weight}} Grams of
+                                        {{data.pname}}</p>
+                                    <table class="table">
+                                        <tbody class="cart-page-detailed-container-sub-specs-text">
+                                            <tr *ngIf="data.stoneprice!=0">
+                                                <td>
+                                                    <p class="">Stone price</p>
+                                                </td>
+                                                <td>
+                                                    <p>:</p>
+                                                </td>
+                                                <td>
+                                                    <p>{{data.stoneprice | currency:'INR'}}</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="text-capitalize">{{data.type}} purity</p>
+                                                </td>
+                                                <td>
+                                                    <p>:</p>
+                                                </td>
+                                                <td>
+                                                    <p>{{data.carat}} Carat</p>
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="">VA%</p>
+                                                </td>
+                                                <td>
+                                                    <p>:</p>
+                                                </td>
+                                                <td>
+                                                    <p>{{data.va}} %</p>
+                                                </td>
+
+                                            </tr>
+                                            <!-- <tr>
+                                                <td>
+                                                    <p>Size</p>
+                                                </td>
+                                                <td>
+                                                    <p>:</p>
+                                                </td>
+                                                <td>
+                                                    <select name="Size">
+                                                        <option value="12">12</option>
+                                                        <option value="14">14</option>
+                                                        <option value="18">18</option>
+                                                        <option value="20">20</option>
+                                                    </select>
+                                                </td>
+                                            </tr> -->
+                                            <!-- <tr>
+                                                <td>
+                                                    <p>Quantity</p>
+                                                </td>
+                                                <td>
+                                                    <p>:</p>
+                                                </td>
+                                                <td>
+                                                    <select name="Quantity">
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </td>
+                                            </tr> -->
+                                        </tbody>
+                                    </table>
+                                    <P>
+                                        <span
+                                            class="text-start cart-page-detailed-container-offer-price-text">{{data.totalprice
+                                            | currency:'INR'}}</span>
+                                        &nbsp;&nbsp;
+                                        <!-- <span
+                                            class="text-end text-start cart-page-detailed-container-original-price-text">₹28,424.00</span> -->
+                                    </P>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="cart-page-price-details-container m-0 p-3 ps-4 pe-4" *ngIf=" !hideCheckout">
+                            <P class="d-flex justify-content-between">
+                                <span class="cart-page-price-details-container-specs-text">Cart Price:</span>
+                                <span class="cart-page-price-details-container-cast-price-text">{{respons.cartprice | currency:'INR'}}</span>
+                            </P>
+                            <p class="d-flex justify-content-between">
+                                <span class="cart-page-price-details-container-specs-text">GST Price:</span>
+                                <span class="cart-page-price-details-container-gst-price-text">{{respons.totalgstprice |
+                                    currency:'INR'}}</span>
+                            </p>
+                            <p class="d-flex justify-content-between" *ngIf="giftid!=null">
+                                <span class="cart-page-price-details-container-specs-text">Gift Card Price:</span>
+                                <span class="cart-page-price-details-container-gst-price-text">{{respons.GiftAmount | currency:'INR'}}</span>
+                            </p>
+                            <!-- <p class="d-flex justify-content-between">
+                                <span class="cart-page-price-details-container-specs-text">Add Gift Card</span>
+                                <span class="cart-page-price-details-container-plus-icon"><i class="fa-solid fa-square-plus"
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal"></i></span>
+                            </p> -->
+                            <!-- <div class="d-flex justify-content-between">
+                                <form>
+                                    <input type="text" class=" cart-page-price-details-coupn-form"
+                                        placeholder="Apply Coupon Card" formControlName="chosenName" />
+                                    <button class=" cart-page-price-details-container-apply-btn">Apply</button>
+                                </form>
+                                <div class="card-apply">
+                                    <i class="fas fa-check"></i><span style="color: green">Gift Card Applied</span>
+                                    <span style="float: right;cursor: pointer" title="click here to remove">x</span>
+                                </div>
+    
+                            </div> -->
+                            <p class="d-flex justify-content-between mt-4">
+                                <span class="cart-page-price-details-container-total-text">Total:</span>
+                                <span class="cart-page-price-details-container-total-price-text">{{respons.payable_amount| currency:'INR'}}</span>
+                            </p>
+                            <div class="d-flex justify-content-center mt-4">
+                                <div>
+                                    <button class="cart-page-price-details-container-checkout-btn my-4" (click)="onSubmit()">Place Order</button>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+
+                </div>
+
+        </div>
+
+    </section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="sty-g">
+                    {{errorshow}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</section>
+<!-- <div class="container-fluid">
+    <div class="row" *ngIf="!errorshow ">
+        <div class="col-md-8">
+            <div class=" main">
+                <div class="fst-up">
+                    <h5>Checkout</h5>
+                    
+
+                    <div *ngIf="hideCheckout"
+                        class="container d-flex align-items-center justify-content-center mt-4 pt-4 mb-4 pb-4">
+                        <div class="" d-flex align-items-center justify-content-center>
+                            <div>
+                                <h1>No Products in Checkout</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="fst-down mt-4 mb-4" *ngIf="!hideCheckout">
+                    <b *ngIf="arr.length<=1">Total ({{arr.length}} Item)</b>
+                    <b *ngIf="arr.length>1">Total ({{arr.length}} Items)</b>
+                    <div class="sec-down-right" *ngFor="let data of arr">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img src="{{data.image_uri}}" alt="" class="border-img">
+                            </div>
+                            <div class="col-md-9">
+                                <div>
+                                    <a *ngIf="data.pname!='Gift Card'" href="" class="purity-text">{{data.weight}} Grams
+                                        of {{data.pname}}
+                                    </a>
+                                    <p style="margin-top: 1px;" class="rupees">{{data.totalprice | currency:'INR'}}</p>
+                                </div>
+                                <span class="pro-text" style="color: black !important;
+                  font-weight: 500 !important;">Product Name : {{data.pname}} </span>
+
+                                <br>
+                                <hr class="hr-qu" *ngIf="data.va!=0">
+                                <span class="pro-text" *ngIf="data.va!=0" style="color: black !important;
+                  font-weight: 200 !important;">VA% : {{data.va}} </span>
+
+
+                                <div *ngIf="data.pname!=='Gift Card' && data.pname!='Gift Card'">
+                                    <hr class="hr-qu" *ngIf="data.va!=0">
+                                    <span *ngIf="data.stoneprice!=0" style="color: black !important;
+                  font-weight: 500 !important;">Stone Price : {{data.stoneprice}}</span>
+                                    
+                                    <div *ngIf="data.stoneprice===0 "> 
+                                        <span>
+
+                                            
+
+                                        </span>
+                                    </div>
+                                    <div class="gold-purity mt-3">
+                                        <span style="text-transform: capitalize;">{{data.type}} Purity</span>
+                                        <span>: {{data.carat}} <span> Carat </span></span>
+                                    </div>
+                                </div>
+                                
+                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+            <div class="sidebar" *ngIf=" !hideCheckout">
+                <h6 class="order-text">Order Summary</h6>
+                <div class="sec-down-left">
+                    <span>Cart Price:</span>
+                    <span class="price-left">{{respons.cartprice | currency:'INR'}}</span>
+                    <hr>
+                    <span>GST Price:</span>
+                    <span class="price-left">{{respons.totalgstprice | currency:'INR'}}</span>
+                    <hr>
+                    <div *ngIf="giftid!=null">
+                        <span>Gift Card Price:</span>
+                        <span class="price-left" style="color:red;">{{respons.GiftAmount | currency:'INR'}}</span>
+                        <hr>
+                    </div>
+
+                    <b class="total">Total:</b>
+                    <b class="price-left">
+                        {{respons.payable_amount| currency:'INR'}}</b>
+
+                    <div>
+                       
+                        <button class="btn place-or" (click)="onSubmit()"> Place Order</button>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" *ngIf="errorshow">
+        <div class="col-md-12">
+            <div class="sty-g">
+                {{errorshow}}
+            </div>
+        </div>
+    </div>
+</div> -->

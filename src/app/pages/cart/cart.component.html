@@ -1,0 +1,239 @@
+<div class="container header-margin-top">
+ 
+</div>
+<section class="min-height" >
+  <div class="row p-0 m-0 text-center my-4">
+    <h5 class="my-2">Cart</h5>
+  </div>
+  <div *ngIf="favo==favResoponse" class=" mt-5 sty-g pb-4 text-center">
+    <section>
+      <div class="container">
+          <div class="row p-0">
+              <div class="col-md-12">
+                  <div class="card p-3 cart-page-card text-center m-auto">
+                      <div class="">
+                          <img src="../../../assets/icons/empty-cart-img.png" alt="img" class="empty-cart-img"/>
+                          <p class="empty-cart-text">Oops! Your Bag Is Empty</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  </div>
+    <div class="container" *ngIf="favo!==favResoponse">
+        <div class="row">
+            <p class="cart-page-bag-head" *ngIf="cartLength<=1">Total ({{cartLength}} Item) </p>
+            <p class="cart-page-bag-head" *ngIf="cartLength>1">Total ({{cartLength}} Items)</p>
+        </div>
+        <div class="row d-flex">
+          <div class="row p-3 w-75" *ngFor="let data of favo">
+            <div class="col-md-12 col-lg-12 m-0 ps-4 pe-4">
+                <div class="row cart-page-detailed-container p-3">
+                  <div class="row text-end">
+                    <i *ngIf="data.pname!==giftPrdoduct" class="fa-regular fa-heart" (click)="movetofav(data.id,data.size)"></i>
+                  </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-lg-4">
+                            <img src="{{data.image_uri}}" alt="item-img" class="cart-page-item-img" />
+                        </div>
+
+                        <div class="col-sm-12 col-lg-8">
+                            <p *ngIf="data.pname!==giftPrdoduct" class="cart-page-detailed-container-main-para-text">{{data.weight}} grams of {{data.pname}}</p>
+                            <table class="table">
+                                <tbody class="cart-page-detailed-container-sub-specs-text">
+                                  <tr *ngIf="data.stoneprice!=0">
+                                    <td>
+                                        <p class="">Stone price</p>
+                                    </td>
+                                    <td>
+                                        <p>:</p>
+                                    </td>
+                                    <td>
+                                        <p>{{data.carat}} carat</p>
+                                    </td>
+
+                                </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="">Purity</p>
+                                        </td>
+                                        <td>
+                                            <p>:</p>
+                                        </td>
+                                        <td>
+                                            <p>{{data.carat}} Carat</p>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Size</p>
+                                        </td>
+                                        <td>
+                                            <p>:</p>
+                                        </td>
+                                        <td>
+                                            <select name="Size">
+                                                <option value="12">12</option>
+                                                <option value="14">14</option>
+                                                <option value="18">18</option>
+                                                <option value="20">20</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Quantity</p>
+                                        </td>
+                                        <td>
+                                            <p>:</p>
+                                        </td>
+                                        <td>
+                                            <select name="Quantity">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <P>
+                                <span class="text-start cart-page-detailed-container-offer-price-text">{{data.totalprice | currency:'INR'}}</span>
+                                &nbsp;&nbsp;
+                                <span
+                                    class="text-end text-start cart-page-detailed-container-original-price-text">₹28,424.00</span>
+                            </P>
+                        </div>
+                    </div>
+                    <div class="row remove-btn text-end">
+                        <p class="cart-page-detailed-container-remove-text" (click)="del(data.id)">
+                            <i class="fa-solid fa-trash me-2"></i>
+                            <span >Remove</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-0">
+
+            </div>
+
+        </div>
+        <div class="row w-25 my-3">
+            <div class="col-md-12 col-lg-12 cart-page-price-details-container m-0 p-3 ps-4 pe-4">
+                <P class="d-flex justify-content-between">
+                    <span class="cart-page-price-details-container-specs-text">Cast Price:</span>
+                    <span class="cart-page-price-details-container-cast-price-text">{{respons.cartprice | currency:'INR'}}</span>
+                </P>
+                <p class="d-flex justify-content-between">
+                    <span class="cart-page-price-details-container-specs-text">GST Price:</span>
+                    <span class="cart-page-price-details-container-gst-price-text">{{respons.totalgstprice | currency:'INR'}}</span>
+                </p>
+                <p class="d-flex justify-content-between">
+                    <span class="cart-page-price-details-container-specs-text">Add Gift Card</span>
+                    <span class="cart-page-price-details-container-plus-icon"><i class="fa-solid fa-square-plus" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></span>
+                </p>
+                <div class="d-flex justify-content-between">
+                    <form [formGroup]="userNameFormGroupEnquiry">
+                        <input type="text" class=" cart-page-price-details-coupn-form" [(ngModel)]="chosenName" placeholder="Apply Coupon Card" formControlName="chosenName" />
+                        <button class=" cart-page-price-details-container-apply-btn" (click)="onSubmit()">Apply</button>
+                    </form>
+                    <div *ngIf="giftcardid!=null" class="card-apply">
+                      <i class="fas fa-check"></i><span style="color: green">Gift Card Applied</span>
+                      <span (click)="removegiftcard()" style="float: right;cursor: pointer" title="click here to remove">x</span>
+                    </div>
+                    
+                </div>
+                <p class="d-flex justify-content-between mt-4">
+                    <span class="cart-page-price-details-container-total-text">Total:</span>
+                    <span class="cart-page-price-details-container-total-price-text">{{finalamount| currency:'INR'}}</span>
+                </p>
+                <div class="d-flex justify-content-center mt-4">
+                    <div>
+                        <button class="cart-page-price-details-container-checkout-btn" routerLink="/Ecommerce/checkout">Checkout</button>
+                    </div>
+                </div>
+                
+
+                
+
+            </div>
+
+        </div>
+
+        </div>
+    </div>
+
+</section>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="sty-g">
+        {{errorshow}}
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog coupon">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Gift Cards</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <section class="coupon">
+            <div class="card d-block mt-4 mb-4">
+              <div class="card-body p-0">
+                <div class="sty-g" *ngIf="lens===0">
+                  No Gift Cards in your Account
+                </div>
+                <div class="table-responsive" *ngIf="lens!=0">
+
+                  <table class="table table-striped table-hover">
+                    <thead>
+                      <tr>
+                        <th class="t-head">Gift card Code</th>
+                        <th class="t-head"> Amount</th>
+                        <th class="t-head">Buy date</th>
+                        <th class="t-head">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let coupon of favos">
+                        <td>{{coupon.gift_card}}</td>
+                        <td>{{coupon.amount}}</td>
+                        <td>{{ coupon.created_at }}</td>
+                        <td class="buttons">
+                          <p *ngIf="coupon.notApplicable && !coupon.is_expired">Coupon code already used</p>
+                          <p *ngIf="!coupon.notApplicable && coupon.is_expired">Coupon code is expired</p>
+                          <p *ngIf="coupon.notApplicable && coupon.is_expired">Coupon code is expired & already used
+                          </p>
+                          <button type="button" class="btn btn-success btn-rounded btn-sm my-0"
+                            (click)="onApply(coupon.id,coupon.gift_card,coupon.amount)" data-bs-dismiss="modal"
+                            aria-label="Close">
+                            Apply
+                          </button>
+                        </td>
+
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+          </section>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

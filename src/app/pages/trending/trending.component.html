@@ -1,0 +1,61 @@
+<section class="header-margin-top mb-2 min-height">
+    <div class="container">
+      <div class="row">
+        <!-- <div *ngIf="filteredFrames$ | async as catalog;">
+          <ng-container *ngIf="catalog.length; else noItems">
+          </ng-container>
+          <ng-template #noItems>
+            <div class="col-12 d-flex justify-content-center">
+              <h2 class="text-center">No Items Found!</h2>
+            </div>
+          </ng-template>
+        </div> -->
+        <!-- <div class="col-md-12 text-center main mb-4">
+          <h4>
+            TOP PICKS <span class="fy-gold"> FOR YOU </span>
+          </h4>
+          <span class="animate-border mr-auto ml-auto mb-4"></span>
+        </div> -->
+        <div class="col-md-3 col-6 c-row mt-5" *ngFor="let products of new">
+          <div class="card pb-3">
+            <div class="gold-ring">
+                <img  src="{{products.image_uri}}" />
+                <!-- <img src="../../../assets/rings/gold-ring2.png" alt=""> -->
+            </div>
+            <div class=" card-container">
+                <div class="row heart-row">
+                    <div class="col-md-10">
+                    <span class="diamond">{{products.pname}}</span>
+                    </div>
+                    <div class="col-md-2 ">
+                        <div>
+                          <img class="icon-heart" src="../../assets/icons/heart.png">
+                        </div>
+                    </div>
+                </div> 
+                <div class="price-block">
+                    <span class="price">{{products.totalprice| currency:'INR'}}</span><span class="strike-block">$28,424.00</span>
+                </div>
+                <div class="zero-block">
+                    <span class="zero">Zero Marketing Changes</span>
+                </div>
+                <div class="icons">
+                        <span><i class="fa-sharp fa-solid fa-star"></i></span>
+                        <span class="icon-i"><i class="fa-sharp fa-solid fa-star"></i></span>
+                        <span class="icon-i"><i class="fa-sharp fa-solid fa-star"></i></span>
+                        <span class="icon-i"><i class="fa-sharp fa-solid fa-star"></i></span>
+                        <span class="icon-i"><i class="fa-sharp fa-solid fa-star"></i></span>
+                </div>
+                <div class="add-card-block">
+                    <!-- <button class="add-card" (click)="func(products.id,products.size)">Add to Cart</button> -->
+                </div>
+                <div class="buy-now-block">
+                    <button routerLink="/Ecommerce/details/{{products.id}}" routerLink="active" class="buy-now">Buy now</button>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+</section>
+  

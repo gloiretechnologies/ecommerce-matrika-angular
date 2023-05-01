@@ -1,0 +1,164 @@
+<section class="mt-5" *ngIf="!showOtpScreen && !otpVerified">
+    <div class="container">
+        <div class="row p-3">
+            <div class="col-4">
+                <img src="../../assets/banners/auth-page-img.png" alt="welcome-img" class="auth-page-img" />
+            </div>
+            <div class="col-7 p-2">
+                <!-- <i class="fa-regular fa-circle-xmark auth-xmark"></i> -->
+                <h2 class="auth-heading-login">Sign Up</h2>
+                <p class="auth-para1-signup">To Enjoy a seamless experience shopping</p>
+                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                    <div class="row">
+                        <div class="col-md-6 px-2">
+                            <div>
+                                <select formControlName="roleType" class="form-control auth-form-box-for-signup"
+                                    (change)="onRoleType()" [ngClass]="{ 'is-invalid': submitted && f['roleType'].errors }">
+                                    <option value="" selected disabled>--Select Type--</option>
+                                    <option value="1">Personal Account</option>
+                                </select>
+                                <div *ngIf="submitted && f['roleType'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['roleType'].errors['required']">*Account type is required</div>
+                                    <!-- <div *ngIf="f['fullname'].errors['pattern']">*Only string is required</div> -->
+                                </div>
+                            </div>
+                            <div>
+                                <input class="form-control auth-form-box-for-signup" formControlName="name"
+                                    [(ngModel)]="names" type="text" placeholder="Enter name"
+                                    aria-describedby="emailHelp" [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" autofocus>
+                                    <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+                                        <div *ngIf="f['name'].errors['required']">*Name is required</div>
+                                        <!-- <div *ngIf="f['fullname'].errors['pattern']">*Only string is required</div> -->
+                                    </div>
+                            </div>
+                           
+                            <div>
+                                <input formControlName="email" [(ngModel)]="mails" type="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+                                    class="form-control auth-form-box-for-signup" placeholder="Enter email address">
+                                    <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                                        <div *ngIf="f['email'].errors['required']">*Email is required</div>
+                                        <div *ngIf="f['email'].errors['email']">*Enter valid Mail Id</div>
+                                    </div>
+                            </div>
+                            
+
+                        </div>
+                        <div class="col-md-6 px-2">
+                            <div>
+                                <input formControlName="mobile" type="text"
+                                    class="form-control auth-form-box-for-signup" required
+                                    placeholder="Enter mobile number" [ngClass]="{ 'is-invalid': submitted && f['mobile'].errors }">
+                                    <div *ngIf="submitted && f['mobile'].errors" class="invalid-feedback">
+                                        <div *ngIf="f['mobile'].errors['required']">*Number is required</div>
+                                        <!-- <div *ngIf="f['fullname'].errors['pattern']">*Only string is required</div> -->        
+                                    </div>
+                            </div>
+                            <div>
+                                <select formControlName="heard_us" class="form-control auth-form-box-for-signup"
+                                    (change)="onRoleType()" [ngClass]="{ 'is-invalid': submitted && f['heard_us'].errors }">
+                                    <option value="" selected disabled>--Select where you heard--</option>
+                                    <option value="1">Google Search</option>
+                                    <option value="2"> Goldsikka Representative</option>
+                                    <option value="3">Social Media Add</option>
+                                    <option value="4"> Radio Add</option>
+                                    <option value="5"> Word of Mouth</option>
+                                    <option value="6">Others</option>
+                                </select>
+                                <div *ngIf="submitted && f['heard_us'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['heard_us'].errors['required']">*Reference is required</div>
+                                    <!-- <div *ngIf="f['fullname'].errors['pattern']">*Only string is required</div> -->
+                                </div>
+                            </div>
+                            <div>
+                                <input type="text" formControlName="referral_code"
+                                    class="form-control auth-form-box-for-signup" placeholder="Enter your referral code"
+                                    maxlength="10" [ngClass]="{ 'is-invalid': submitted && f['referral_code'].errors }">
+                                    
+                            </div>
+
+                        </div>
+                        <div *ngIf="errorMessage" class="form-group mt-3">
+                            <div class="alert alert-danger">
+                              <i class="fas fa-exclamation-triangle"></i> &nbsp; {{errorMessage}}
+                            </div>
+                          </div>
+
+                    </div>
+                    <div class="form-check ">
+                        <input class="form-check-input auth-privacy-checkbox" type="checkbox" value="" formControlName="acceptTerms"
+                            id="flexCheckDefault" [ngClass]="{ 'is-invalid': submitted && f['acceptTerms'].errors }">
+                        <label class="form-check-label auth-privacy-checkbox-text" for="flexCheckDefault">
+                            I agree to the <span style="color: #FF7215;">Terms of Use</span> & <span
+                                style="color: #FF7215;">Privacy Policy</span>
+                        </label>
+                    </div>
+                    <div *ngIf="submitted && f['acceptTerms'].errors" class="invalid-feedback">
+                        Accept Terms is required
+                      </div>
+                    <div class="form-check">
+                        <input class="form-check-input auth-privacy-checkbox2" type="checkbox" value=""
+                            id="flexCheckDefault">
+                        <label class="form-check-label auth-privacy-checkbox2-text" for="flexCheckDefault">
+                            Subscribe me for <img src="../../assets/icons/auth-whatsapp-icon.png" href=""
+                                alt="google-img" class="auth-whatsapp-icon" />notificatons
+                        </label>
+                        <div *ngIf="submitted && f['acceptTerms'].errors" class="invalid-feedback">
+                            Accept Terms is required
+                          </div>
+                    </div>
+                    <button type="submit" class="btn auth-page-continue-btn">CREATE ACCOUNT</button>
+                </form>
+                
+                <p class="auth-para3-dont-have-account">Already had account? <span><a href=""
+                            class="auth-para3-dont-have-account-signup" routerLink="/login"> LOG IN</a></span></p>
+
+            </div>
+        </div>
+    </div>
+    <h3 *ngIf="errorMessage" style="color: red;">{{errorMessage}}</h3>
+
+</section>
+
+<!-- *ngIf="showOtpScreen && !otpVerified" -->
+<section   *ngIf="showOtpScreen && !otpVerified">
+    <div class="container">
+        <div class="row p-3">
+            <div class="col-5">
+                <img src="../../assets/banners/auth-page-img.png" alt="welcome-img" class="auth-page-img" />
+            </div>
+            <div class="col-7 p-2">
+                <!-- <i class="fa-regular fa-circle-xmark auth-xmark"></i>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               -->
+                <h2 class="auth-heading-login">OTP</h2>
+                <p class="auth-para1-signup">Enjoy a seamless experience shopping</p>
+                <div class="alert alert-info mb-4">
+                    We have sent you a one time password (OTP) to your registered mobile number .
+                  </div>
+                  <div *ngIf="successMessage" class="form-group">
+                    <div class="alert alert-success">
+                      <ul>
+                        <li>{{successMessage}}</li>
+                      </ul>
+                    </div>
+                  </div>
+                <form>
+                   
+                <ng-otp-input class="form-control auth-form-box-for-signup" (onInputChange)="onOtpChange($event)"
+                [config]="{length:6}" class="otpInput">
+                        </ng-otp-input>
+                </form>
+                <div class="form-group text-right my-3">
+                    <a class="text-info" (click)="registerResendOtp();" style="text-transform: capitalize;">Resend OTP</a>
+                  </div>
+                  <div class="alert alert-info mb-4" *ngIf="errorMessage" style="color: red;">
+                    {{errorMessage}}                  </div>
+                <p  ></p>
+                <!-- <button class="btn auth-page-continue-btn">Submit OTP</button> -->
+
+            </div>
+            <div class="alert-success text-center" *ngIf="otpVerified">
+                <h3 class="mb-4">Account Verified!</h3>
+                <a class="btn btn-primary btn-lg btn-block" routerLink="/">Go to Dashboard</a>
+            </div>
+        </div>
+    </div>
+</section>

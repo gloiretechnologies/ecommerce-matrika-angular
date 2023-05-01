@@ -1,0 +1,241 @@
+
+.hh-grayBox {
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+
+.pt45 {
+    padding-top: 45px;
+}
+
+.order-tracking {
+    text-align: center;
+    width: 2.33%;
+    position: relative;
+}
+
+.order-tracking .is-complete {
+    display: block;
+    position: relative;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    border: 0px solid #AFAFAF;
+    background-color: #f7be16;
+    margin: 0 auto;
+    transition: background 0.25s linear;
+    -webkit-transition: background 0.25s linear;
+    z-index: 2;
+}
+.order-tracking .is-not {
+    display: block;
+    position: relative;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    border: 0px solid #AFAFAF;
+    background-color: #f7be16;
+    margin: 0 auto;
+    transition: background 0.25s linear;
+    -webkit-transition: background 0.25s linear;
+    z-index: 2;
+}
+.order-tracking .is-complete:after {
+    display: block;
+    position: absolute;
+    content: '';
+    height: 14px;
+    width: 7px;
+    top: -2px;
+    bottom: 0;
+    left: 5px;
+    margin: auto 0;
+    border: 0px solid #AFAFAF;
+    border-width: 0px 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+}
+.order-tracking .is-not:after {
+    display: block;
+    position: absolute;
+    content: '';
+    height: 14px;
+    width: 7px;
+    top: -2px;
+    bottom: 0;
+    left: 5px;
+    margin: auto 0;
+    border: 0px solid #AFAFAF;
+    border-width: 0px 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+}
+.order-tracking.completed .is-complete {
+    border-color: #27aa80;
+    border-width: 0px;
+    background-color: #27aa80;
+}
+
+.order-tracking.completed .is-complete:after {
+    border-color: #fff;
+    border-width: 0px 3px 3px 0;
+    width: 7px;
+    left: 11px;
+    opacity: 1;
+}
+.order-tracking.completed .is-not:after {
+    border-color: #fff;
+    border-width: 0px 3px 3px 0;
+    width: 7px;
+    left: 11px;
+    opacity: 1;
+}
+.order-tracking p {
+    color: #A4A4A4;
+    font-size: 16px;
+    margin-top: 8px;
+    margin-bottom: 0;
+    line-height: 20px;
+}
+
+.order-tracking p span {
+    font-size: 14px;
+}
+
+.order-tracking.completed p {
+    color: #000;
+}
+
+.order-tracking::before {
+    content: '';
+    display: block;
+    height: 3px;
+    width: calc(503% - 7px);
+    background-color: #f7be16;
+    top: 13px;
+    position: absolute;
+    left: calc(-438% + 1px);
+    z-index: 0;
+}
+
+.order-tracking:first-child:before {
+    display: none;
+}
+
+.order-tracking.completed:before {
+    background-color: #27aa80;
+}
+
+.ot-sec {
+    padding-top: 40px;
+    padding-bottom: 15px;
+    background: #F1F3F6;
+}
+
+.img-1 {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.ot-row {
+    padding-top: 25px;
+    background: white;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    padding-bottom: 25px;
+}
+
+.track-line {
+    font-size: 12px !important;
+    line-height: 15px !important;
+}
+
+.seven-col {
+    padding: 18px 12px;
+}
+.is-not{
+    border-color: #9da7a4;
+    background-color: #9da7a4;
+ border-width: 0px;
+}
+.bs4-order-tracking {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: #878788;
+    padding-left: 0px;
+    margin-top: 30px
+}
+
+.bs4-order-tracking li {
+    list-style-type: none;
+    font-size: 13px;
+    width: 13%;
+    float: left;
+    position: relative;
+    font-weight: 400;
+    color: #878788;
+    text-align: center;
+}
+
+.bs4-order-tracking li:first-child:before {
+    margin-left: 15px !important;
+    padding-left: 11px !important;
+    text-align : left !important;
+}
+
+.bs4-order-tracking li:last-child:before {
+    margin-right: 5px !important;
+    padding-right: 11px !important;
+    text-align : right !important;
+}
+
+.bs4-order-tracking li>div {
+    /*content: "2";*/
+    color: #fff;
+    width: 29px;
+    text-align: center;
+    line-height: 29px;
+    display: block;
+    font-size: 12px;
+    background: #878788;
+    border-radius: 50%;
+    margin: auto
+}
+
+.bs4-order-tracking li:after {
+    content: '';
+    width: 150%;
+    height: 2px;
+    background: #878788;
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 15px;
+    z-index: -1
+}
+
+
+.bs4-order-tracking li:first-child:after {
+    left: 50%;
+}
+
+.bs4-order-tracking li:last-child:after {
+    left: 0%!important;
+    width: 0% !important
+}
+.bs4-order-tracking li.active{
+  font-weight: bold;
+  color: #dc3545;
+}
+.bs4-order-tracking li.active>div {
+    background: #dc3545;
+}
+
+.bs4-order-tracking li.active:after {
+    background: #dc3545
+}
+
+.card-timeline {
+    background-color: #fff;
+    z-index: 0
+}

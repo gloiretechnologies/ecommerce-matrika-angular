@@ -1,0 +1,319 @@
+body{
+    color: #C2CFCE;  
+  }
+.count{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    display: inline-flex;
+    top: 0;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    color: #212121;
+    font-size: 14px;
+    border-radius: 400px;
+    transition: all ease 1s;
+    z-index: 1;
+}
+
+
+
+.sticky{
+    position: fixed;
+    width: 100%;
+    z-index:999;
+    top: 0;
+  }
+  .matrika-navbar {
+      width: 100%;
+      height:150px;
+      object-fit: contain;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image:url('../../../assets/Frame\ 78.png')
+  }
+  .container{
+    max-width: 1380px;
+      color: #C2CFCE;
+      
+  }
+  .topFirstBlock{
+      text-align: start;
+  }
+  .img-truck{
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+  .order-tracking{
+      font-size: 14px;
+      margin-left: 5px;
+      text-align: initial;
+  }
+  .topNavList{
+     
+      align-items: center;
+      width: 80%;
+      margin-left: 20%;
+      color: #C2CFCE;
+  }
+//   .top-nav2{
+//     margin-top: -24px;
+//   }
+  .topNavList ul{
+    display: flex;
+  }
+ 
+  li{
+      list-style: none;
+      width: 100%;
+      text-align: end;
+  }
+  
+  
+  .logo-block-main{
+      text-align: initial;
+  }
+  .goldsikkaLogo{
+      width: 90px;
+      height: 110px;
+      object-fit: contain;
+      margin-right: 14px;
+      margin-top: -14px;
+  }
+  .line{
+    height: 80px;
+    border-left: 1px solid white;
+  }
+  .MatrikaLogo{
+      width: 68px;
+      height: 88px;
+      object-fit: contain;
+      margin-left: 14px;
+      margin-top: 23px;
+  }
+  .searchInput{
+      background-color: transparent;
+      position: relative;
+      color: #C2CFCE;
+      width: 85%;
+      border: none;
+      border-radius: 5px;
+        padding: 10px 5px;
+        //border: 1px solid #fff;
+  }
+  .user{
+      width: 20px;
+      height: 20px;
+  }
+  .heart{
+      width: 20px;
+      height: 20px;
+  }
+  .bag{
+      width: 20px;
+      height: 20px;
+  }
+  .searchIcon{
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      margin: 10px 0px;
+      left: 60%;
+  }
+  .microphone{
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      margin: 10px 0px;
+      left: 55%;
+  }
+  .cart-row{
+      width: 100%;
+  }
+  
+  //banner and nav
+  @import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto:ital,wght@0,100;1,100&display=swap');
+  .navbar a {
+      padding-left: 28px;
+      padding-right: 28px;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16.8px;
+      letter-spacing: 1.15%;
+      color: #4E4B66;
+      
+  
+  }
+  .offers{
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16.8px;
+      letter-spacing: 1.15%;
+      color: #D71921;
+  }
+//   .active{
+//     //transform-origin: left top;
+//     // transform: scale(1, 1);
+//     // color: #013220 !important;
+//     text-decoration: underline
+//   }
+
+
+.active{
+    text-decoration: underline;
+    color: rgb(16, 172, 177) !important;
+}
+
+
+  ///Drop down css
+  @import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto:ital,wght@0,100;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.dropdown-menu{
+    width: 350px !important;
+}
+.profile-dropdown-card {
+    width: 340px;
+    // height: 283px;
+    // background-color: #FFFFFF;
+    // box-shadow: 0px 0px 4px 0.8px rgba(0, 0, 0, 0.2);
+    // border-radius: 6px;
+}
+
+.profile-dropdown-card-icon {
+    margin-top: 8px;
+    height: 21px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 20.88px;
+    color: #FFFFFF;
+}
+
+.profile-dropdown-card-icon-bg {
+    width: 40px;
+    height: 40px;
+    background-color: #013220;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+.profile-dropdown-card-head-email {
+    margin-left: 16px;
+}
+
+.profile-dropdown-card-main-head-text {
+    height: 21px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 87%;
+    color: #242330;
+}
+
+.profile-dropdown-card-main-email-text {
+    height: 17px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #52525C;
+}
+
+.profile-dropdown-card-icons-with-text-container {
+    margin-top: 35px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+.profile-dropdown-card-icons {
+    color: #4E4B66;
+    height: 16.67px;
+    width: 16px;
+    margin-right: 18.5px;
+}
+
+.profile-dropdown-card-icons-text {
+    height: 17px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #4E4B66;
+}
+
+
+
+
+
+///////offers ///$avatar-size: 32px;
+$body-background: #353535;
+
+@font-face {
+font-family: "ubuntu";
+font-style: italic;
+font-weight: 300;
+src: local("Lato Light Italic")s, local("Lato-LightItalic"),
+url(https://fonts.gstatic.com/s/ubuntucondensed/v8/u-4k0rCzjgs5J7oXnJcM_0kACGMtT-Dfqw.woff2)
+    format("woff2");
+}
+
+body {
+height: 100vh;
+margin: 0;
+background-color: $body-background;
+font-family: "ubuntu", Arial, sans-serif;
+overflow-x: hidden;
+display: grid;
+place-items: center;
+}
+
+a {
+text-decoration: none;
+color: #9ca0b1;
+}
+
+.wrapper {
+text-align: center;
+.offers{
+color: #fff;
+font-size: 14px;
+text-transform: capitalize;
+font-weight: 400;
+font-family: "Josefin Sans", sans-serif;
+background: linear-gradient(to right,red 10%, #25abe8 50%, #57d75b 60%);
+background-size: auto auto;
+background-clip: border-box;
+background-size: 200% auto;
+color: #fff;
+background-clip: text;
+text-fill-color: transparent;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+animation: textclip 1.5s linear infinite;
+display: inline-block;
+}
+}
+
+@keyframes textclip {
+to {
+background-position: 200% center;
+}
+}
+

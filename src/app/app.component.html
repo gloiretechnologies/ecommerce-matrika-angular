@@ -1,0 +1,11 @@
+<app-header *ngIf="showHead"></app-header>
+<router-outlet (activate)="onActivate($event)" ></router-outlet>
+<app-footer *ngIf="showHead"></app-footer>
+<ngx-spinner bdColor="#333335c9" size="medium">
+    <img width="80px" src="../assets/icons/lightloading.gif" alt="">
+    <p style="color: #ffffff;">
+      Please Wait...
+    </p>
+  
+</ngx-spinner>
+  

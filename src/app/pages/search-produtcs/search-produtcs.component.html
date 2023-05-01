@@ -1,0 +1,175 @@
+<!-- <section class="header-margin-top">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 p-0">
+          <div class="">
+            <img src="../../../assets/banners/banner-ring.jpg" class="b-img" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <section>
+    <div class="container">
+      <P class="folders-paragraph">
+        <span>Home / </span>
+        <span>Search</span>
+      </P>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="row w-100">
+        <div class="col d-flex flex-row justify-content-center ">
+          <p class=""><span class="filter-by-text ">Filter by:</span></p>
+          <!-- <div class="dropdown drop-down-css">
+            <a class="btn dropdown-toggle dropdown-text" role="button" data-bs-toggle   ="dropdown" aria-expanded="false">
+              Brand
+            </a>
+            <ul class="dropdown-menu">
+              <ul class="dropdown-menu">
+                <li>
+                  <div class="form-group"
+                  *ngFor="let filter of brandFilters let index =index ">
+                  <input type="checkbox" id="checkbox-{{filter.id}}" class="form-check-input"
+                    (change)="brandChanged(filter)" value="{{filter.name}}" [ngModel]="selectedIndex === index"
+                    (change)="changeSelection($event, index)" />
+                  <label class="form-check-label" for="checkbox-{{filter.id}}">{{filter.vis}}</label>
+              </div>
+                </li>
+              </ul>
+            </ul>
+  
+          </div> -->
+          <div class="dropdown drop-down-css">
+            <a class="btn dropdown-toggle dropdown-text" aria-labelledby="dropdownMenuButton1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Type
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li>
+                <div class="form-group"
+                *ngFor="let filterType of typesFilters let index =index ">
+                <input type="checkbox" id="{{filterType.id}}" class="form-check-input"
+                  (change)="typesChanged(filterType)" value="{{filterType.name}}" [ngModel]="selectedIndex === index"
+                  (change)="change($event, index)" />
+                <label class="form-check-label" for="{{filterType.id}}">{{filterType.vis}}</label>
+              </div>
+              </li>
+            </ul>
+          </div>
+          <div class="dropdown drop-down-css">
+            <a class="btn dropdown-toggle dropdown-text" aria-labelledby="dropdownMenuButton2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Price
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+              <li>
+                <div class="form-group"
+                *ngFor="let filter of pricefilFilters let index =index">
+                <input type="checkbox" id="checkbox-{{filter.id}}" class="form-check-input"
+                  (change)="priceChanged(filter,$event)" value="{{filter.name}}" [ngModel]="selectedIndex === index"
+                  (change)="change($event, index)" />
+                <label class="form-check-label" for="checkbox-{{filter.id}}">{{filter.vis}}</label>
+              </div>
+              </li>
+            </ul>
+          </div>
+  
+          <div class="dropdown drop-down-css">
+            <a class="btn dropdown-toggle dropdown-text" role="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
+              Weight
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                  <li>
+                    <div class="form-group"
+                    *ngFor="let filter of weightfillFilters let index =index " >
+                    <input type="checkbox" id="checkbox-{{filter.id}}" class="form-check-input"
+                      (change)="weightfillChanged(filter,$event)" value="{{filter.name}}" [ngModel]="selectedIndex === index"
+                      (change)="change($event, index)" />
+                    <label class="form-check-label" for="checkbox-{{filter.id}}">{{filter.vis}}</label>
+                  </div>
+                  </li>
+            </ul>
+          </div>
+  
+          <div class="dropdown drop-down-css">
+            <a class="btn dropdown-toggle dropdown-text" aria-labelledby="dropdownMenuButton4" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Carat
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
+                  <li>
+                    <div class="form-group"
+                    *ngFor="let filter of caratsFilters let index =index ">
+                    <input type="checkbox" id="checkbox-{{filter.id}}" class="form-check-input"
+                      (change)="caratsChanged(filter)" value="{{filter.name}}" [ngModel]="selectedIndex === index"
+                      (change)="change($event, index)" />
+                    <label class="form-check-label" for="checkbox-{{filter.id}}">{{filter.vis}}</label>
+                  </div>
+                  </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  <section class="mt-4 mb-2">
+    <div class="container">
+      <div class="row">
+        <div *ngIf="filteredFrames$ | async as catalog;">
+          <ng-container *ngIf="catalog.length; else noItems">
+          </ng-container>
+          <ng-template #noItems>
+            <div class="col-12 d-flex justify-content-center">
+              <h2 class="text-center">No Items Found!</h2>
+            </div>
+          </ng-template>
+        </div>
+        <!-- <div class="col-md-12 text-center main mb-4">
+            <h4>
+              TOP PICKS <span class="fy-gold"> FOR YOU </span>
+            </h4>
+            <span class="animate-border mr-auto ml-auto mb-4"></span>
+          </div> -->
+        <div class="col-md-3 col-6 c-row mt-5" *ngFor="let products of filteredFrames$ | async">
+          <div class="card pb-3">
+            <div class="gold-ring">
+              <img src="{{products.image_uri}}" />
+              <!-- <img src="../../../assets/rings/gold-ring2.png" alt=""> -->
+            </div>
+            <div class=" card-container">
+              <div class="row heart-row">
+                <div class="col-md-10">
+                  <span class="diamond">{{products.pname}}</span>
+                </div>
+                <div class="col-md-2 ">
+                  <div (click)="wish(products.id,products.size)">
+                    <img class="icon-heart" src="../../assets/icons/heart.png">
+                  </div>
+                </div>
+              </div>
+              <div class="price-block">
+                <span class="price">{{products.totalprice| currency:'INR'}}</span><span
+                  class="strike-block">$28,424.00</span>
+              </div>
+              <div class="zero-block">
+                <span class="zero">Zero Marketing Changes</span>
+              </div>
+              <div class="icons">
+                <span><i class="fa-sharp fa-solid fa-star"></i></span>
+                <span class="icon-i"><i class="fa-sharp fa-solid fa-star"></i></span>
+                <span class="icon-i"><i class="fa-sharp fa-solid fa-star"></i></span>
+                <span class="icon-i"><i class="fa-sharp fa-solid fa-star"></i></span>
+                <span class="icon-i"><i class="fa-sharp fa-solid fa-star"></i></span>
+              </div>
+              <div class="add-card-block">
+                <button class="add-card" (click)="func(products.id,products.size)">Add to Cart</button>
+              </div>
+              <div class="buy-now-block">
+                <button routerLink="/Ecommerce/details/{{products.id}}" routerLink="active" class="buy-now">View More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
